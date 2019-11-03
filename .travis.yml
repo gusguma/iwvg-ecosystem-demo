@@ -21,7 +21,7 @@ addons:
 
 script:
   #Test unitario y de integracion con cobertura (jacoco)
-  #- mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
+  - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
   #SONARCLOUD
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=gusguma_iwvg-ecosystem-demo
 

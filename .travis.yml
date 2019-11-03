@@ -19,3 +19,4 @@ script:
 
   #SONARCLOUD
   - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=gusguma-github -Dsonar.login=$SONAR
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=gusguma_iwvg-ecosystem-demo

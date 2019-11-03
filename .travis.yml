@@ -13,18 +13,12 @@ notifications:
 # - mongodb
 # before_install:
 # - mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
-addons:
-  sonarcloud:
-    organization: "gusguma-github"
-    token:
-      secure: "travis encrypt 41c36bfe137ebbe6521fa7b7bf87c874ce9af098"
 
 script:
   #Test unitario y de integracion con cobertura (jacoco)
   - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
   #SONARCLOUD
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=gusguma_iwvg-ecosystem-demo
-
+  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=gusguma-github -Dsonar.login=$SONAR
 
 
 

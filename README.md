@@ -2,6 +2,12 @@
 ## Plantilla para la práctica de Ecosistema (IWVG-ecosystem)
 > Plantilla con Spring básico (API, test) 
 
+## Estado del Proyecto
+[![Build Status](https://travis-ci.com/gusguma/iwvg-ecosystem-demo.svg?branch=develop)](https://travis-ci.com/gusguma/iwvg-ecosystem-demo)
+![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-ecosystem-demo&metric=alert_status)
+
+
+
 ## Ecosistema
 * Java
 * Maven

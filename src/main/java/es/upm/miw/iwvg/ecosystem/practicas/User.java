@@ -48,9 +48,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "Point{" +
+        return "User{" +
                 "number=" + this.number +
-                "name=" + this.name +
+                ",name=" + this.name +
                 ",familyName=" + this.familyName +
                 '}';
     }

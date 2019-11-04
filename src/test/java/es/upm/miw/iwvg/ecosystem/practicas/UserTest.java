@@ -27,7 +27,23 @@ public class UserTest {
     }
 
     @Test
+    void testUserFullNameUpper() {
+        assertEquals("PABLO PEREZ", user.fullNameUpper());
+    }
+
+    @Test
+    void testUserFullNameLower() {
+        assertEquals("pablo perez", user.fullNameLower());
+    }
+
+    @Test
     void testUserInitials() {
         assertEquals("P.", user.initials());
     }
+
+    @Test
+    void testUsertoString() {
+        assertEquals("User{number=1,name=Pablo,familyName=Perez}", user.toString());
+    }
+
 }

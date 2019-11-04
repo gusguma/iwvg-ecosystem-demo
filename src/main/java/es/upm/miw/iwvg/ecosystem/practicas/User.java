@@ -22,6 +22,14 @@ public class User {
         return this.name + " " + this.familyName;
     }
 
+    public String fullNameUpper() {
+        return this.fullName().toUpperCase();
+    }
+
+    public String fullNameLower() {
+        return this.fullName().toLowerCase();
+    }
+
     public String initials() {
         return this.name.substring(0, 1) + ".";
     }
@@ -36,5 +44,14 @@ public class User {
 
     public String getFamilyName() {
         return this.familyName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "number=" + this.number +
+                ",name=" + this.name +
+                ",familyName=" + this.familyName +
+                '}';
     }
 }

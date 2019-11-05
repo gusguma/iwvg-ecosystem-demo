@@ -44,4 +44,19 @@ public class DecimalCollection {
         this.validateIsNullOrEmpty();
         return Collections.max(this.collection);
     }
+
+    public double lower() {
+        this.validateIsNullOrEmpty();
+        return Collections.min(this.collection);
+    }
+
+    public double average() {
+        this.validateIsNullOrEmpty();
+        return this.collection.stream().mapToDouble(Double::doubleValue).average().getAsDouble();
+    }
+
+    public double multiply() {
+        this.validateIsNullOrEmpty();
+        return this.collection.stream().reduce(1.0, (accumulator, value) -> (accumulator * value));
+    }
 }

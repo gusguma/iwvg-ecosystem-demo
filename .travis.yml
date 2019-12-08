@@ -27,7 +27,6 @@ deploy:
     secure: $HEROKU
   on:
     branch: master
-
 #  app: iwvg-ecosystem, por defecto, nombre del artefacto
 
 

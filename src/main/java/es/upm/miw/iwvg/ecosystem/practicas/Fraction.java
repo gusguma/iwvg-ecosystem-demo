@@ -28,7 +28,6 @@ package es.upm.miw.iwvg.ecosystem.practicas;
 public class Fraction {
 
     private int numerator;
-
     private int denominator;
 
     public Fraction(int numerator, int denominator) {
@@ -50,5 +49,16 @@ public class Fraction {
 
     public int getDenominator() {
         return denominator;
+    }
+
+    public boolean isPropia(){
+        boolean propia;
+        propia = numerator < denominator;
+        return propia;
+    }
+    public boolean isImpropia(){
+        boolean impropia;
+        impropia = !isPropia();
+        return impropia;
     }
 }

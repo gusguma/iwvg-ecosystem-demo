@@ -1,4 +1,5 @@
 package es.upm.miw.iwvg.ecosystem.practicas;
+
 /**
  * Conceptos: Las fracciones propias son aquellas cuyo numerador es menor que el denominador
  * <p>
@@ -51,14 +52,63 @@ public class Fraction {
         return denominator;
     }
 
-    public boolean isPropia(){
+    public boolean isPropia() {
         boolean propia;
         propia = numerator < denominator;
         return propia;
     }
-    public boolean isImpropia(){
-        boolean impropia;
-        impropia = !isPropia();
-        return impropia;
+
+    public boolean isImpropia() {
+        return !isPropia();
     }
+
+    private int multiplyExtreme(Fraction fraction){
+        int extreme = this.numerator * fraction.denominator;
+        return extreme;
+    }
+
+    private int multiplyMedium(Fraction fraction){
+        int medium = this.denominator * fraction.numerator;
+        return medium;
+    }
+
+    public boolean isEquivalent(Fraction fraction) {
+        return multiplyExtreme(fraction) == multiplyMedium(fraction);
+    }
+
+    public boolean isMajor(Fraction fraction) {
+        return multiplyExtreme(fraction) > multiplyMedium(fraction);
+    }
+
+    public boolean isMinor(Fraction fraction) {
+        return multiplyExtreme(fraction) < multiplyMedium(fraction);
+    }
+
+    private int denominatorCommon(Fraction fraction){
+        return this.denominator * fraction.denominator;
+    }
+
+    public Fraction sum(Fraction fraction) {
+        this.numerator = multiplyExtreme(fraction) + multiplyMedium(fraction);
+        this.denominator = denominatorCommon(fraction);
+        return this;
+    }
+
+    public void sub(Fraction fraction) {
+        //TODO
+    }
+
+    public void multiply(Fraction fraction) {
+        //TODO
+    }
+
+    public void divide(Fraction fraction) {
+        //TODO
+    }
+
+    public void simplify(Fraction fraction){
+        //TODO
+    }
+
+
 }

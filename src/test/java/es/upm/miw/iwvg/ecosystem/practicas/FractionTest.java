@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class FractionTest {
 
     private Fraction fraction;
+    private Fraction fractionOperation;
 
     @BeforeEach
     void before() {
@@ -30,12 +31,34 @@ public class FractionTest {
     void testDecimal() {
         assertEquals(2, fraction.decimal(), 10e-5);
     }
+
     @Test
     void testIsPropia() {
         assertFalse(fraction.isPropia());
     }
+
     @Test
     void testIsImpropia() {
         assertTrue(fraction.isImpropia());
+    }
+
+    @BeforeEach
+    void beforeOperation() {
+        fractionOperation = new Fraction(15,4);
+    }
+
+    @Test
+    void testIsEquivalent() {
+        assertEquals(false, fraction.isEquivalent(fractionOperation));
+    }
+
+    @Test
+    void testIsMajor() {
+        assertEquals(false, fraction.isMajor(fractionOperation));
+    }
+
+    @Test
+    void testIsMinor() {
+         assertEquals(true, fraction.isMinor(fractionOperation));
     }
 }

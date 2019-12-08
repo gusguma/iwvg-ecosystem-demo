@@ -1,5 +1,5 @@
-## [Máster en Ingeniería Web por la Universidad Politécnica de Madrid (miw-upm)](http://miw.etsisi.upm.es)
-## Plantilla para la práctica de Ecosistema (IWVG-ecosystem)
+## [Máster en Ingeniería Web por la Universidad Politécnica de Madrid (miw-upm)]
+## Plantilla Ecosistema (Ecosystem)
 > Plantilla con Spring básico (API, test) 
 
 ## Estado del Proyecto

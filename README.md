@@ -1,4 +1,3 @@
-## [Máster en Ingeniería Web por la Universidad Politécnica de Madrid (miw-upm)]
 ## Plantilla Ecosistema (Ecosystem)
 > Plantilla con Spring básico (API, test) 
 

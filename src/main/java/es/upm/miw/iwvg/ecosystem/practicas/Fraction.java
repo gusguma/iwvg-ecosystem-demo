@@ -52,10 +52,16 @@ public class Fraction {
         return denominator;
     }
 
+    public void setNumerator(int numerator) {
+        this.numerator = numerator;
+    }
+
+    public void setDenominator(int denominator) {
+        this.denominator = denominator;
+    }
+
     public boolean isPropia() {
-        boolean propia;
-        propia = numerator < denominator;
-        return propia;
+        return numerator < denominator;
     }
 
     public boolean isImpropia() {
@@ -63,13 +69,11 @@ public class Fraction {
     }
 
     private int multiplyExtreme(Fraction fraction){
-        int extreme = this.numerator * fraction.denominator;
-        return extreme;
+        return this.numerator * fraction.denominator;
     }
 
     private int multiplyMedium(Fraction fraction){
-        int medium = this.denominator * fraction.numerator;
-        return medium;
+        return this.denominator * fraction.numerator;
     }
 
     public boolean isEquivalent(Fraction fraction) {

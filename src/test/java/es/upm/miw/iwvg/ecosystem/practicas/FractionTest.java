@@ -35,27 +35,37 @@ public class FractionTest {
 
     @Test
     void testIsPropia() {
+        fractionOperation.setDenominator(80);
         assertFalse(fraction.isPropia());
+        assertTrue(fractionOperation.isPropia());
     }
 
     @Test
     void testIsImpropia() {
+        fractionOperation.setDenominator(80);
         assertTrue(fraction.isImpropia());
+        assertFalse(fractionOperation.isImpropia());
     }
 
     @Test
     void testIsEquivalent() {
-        assertEquals(false, fraction.isEquivalent(fractionOperation));
+        Fraction fractionTest = new Fraction(8,4);
+        assertFalse(fraction.isEquivalent(fractionOperation));
+        assertTrue(fraction.isEquivalent(fractionTest));
     }
 
     @Test
     void testIsMajor() {
-        assertEquals(false, fraction.isMajor(fractionOperation));
+        Fraction fractionTest = new Fraction(8,15);
+        assertFalse(fraction.isMajor(fractionOperation));
+        assertTrue(fraction.isMajor(fractionTest));
     }
 
     @Test
     void testIsMinor() {
-         assertEquals(true, fraction.isMinor(fractionOperation));
+        Fraction fractionTest = new Fraction(1,4);
+        assertTrue(fraction.isMinor(fractionOperation));
+        assertFalse(fraction.isMinor(fractionTest));
     }
     @Test
     void testSum(){

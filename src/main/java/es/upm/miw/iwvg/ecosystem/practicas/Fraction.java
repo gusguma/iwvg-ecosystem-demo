@@ -84,30 +84,53 @@ public class Fraction {
         return multiplyExtreme(fraction) < multiplyMedium(fraction);
     }
 
-    private int denominatorCommon(Fraction fraction){
-        return this.denominator * fraction.denominator;
-    }
-
     public Fraction sum(Fraction fraction) {
         this.numerator = multiplyExtreme(fraction) + multiplyMedium(fraction);
         this.denominator = denominatorCommon(fraction);
         return this;
     }
 
-    public void sub(Fraction fraction) {
-        //TODO
+    public Fraction sub(Fraction fraction) {
+        this.numerator = multiplyExtreme(fraction) - multiplyMedium(fraction);
+        this.denominator = denominatorCommon(fraction);
+        return this;
     }
 
-    public void multiply(Fraction fraction) {
-        //TODO
+    public Fraction multiply(Fraction fraction) {
+        this.numerator = this.numerator * fraction.numerator;
+        this.denominator = this.denominator * fraction.denominator;
+        return this;
     }
 
-    public void divide(Fraction fraction) {
-        //TODO
+    public Fraction divide(Fraction fraction) {
+        this.numerator = multiplyExtreme(fraction);
+        this.denominator = multiplyMedium(fraction);
+        return this;
     }
 
-    public void simplify(Fraction fraction){
-        //TODO
+    public Fraction simplify(){
+        int maximumCommonDivider = maximumCommonDivider();
+        numerator = numerator / maximumCommonDivider;
+        denominator = denominator / maximumCommonDivider;
+        return this;
+    }
+
+    private int denominatorCommon(Fraction fraction){
+        this.denominator = this.denominator * fraction.denominator;
+        return this.denominator;
+    }
+
+    private int maximumCommonDivider(){
+        Fraction fraction = new Fraction();
+        int rest;
+        fraction.numerator = Math.abs(numerator);
+        fraction.denominator = Math.abs(denominator);
+        while(fraction.denominator != 0){
+           rest = fraction.numerator % fraction.denominator;
+           fraction.numerator = fraction.denominator;
+           fraction.denominator = rest;
+        }
+        return fraction.numerator;
     }
 
 

@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg.ecosystem.practicas;
+package com.urneba.iwvg.ecosystem.practicas;
 
 public class User {
 

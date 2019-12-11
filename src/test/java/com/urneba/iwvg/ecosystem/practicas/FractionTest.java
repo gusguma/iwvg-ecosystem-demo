@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg.ecosystem.practicas;
+package com.urneba.iwvg.ecosystem.practicas;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

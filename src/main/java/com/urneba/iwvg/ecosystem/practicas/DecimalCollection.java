@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg.ecosystem.practicas;
+package com.urneba.iwvg.ecosystem.practicas;
 
 import java.util.ArrayList;
 import java.util.Collections;

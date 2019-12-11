@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg.ecosystem.practicas;
+package com.urneba.iwvg.ecosystem.practicas;
 
 import org.apache.logging.log4j.LogManager;
 import org.junit.jupiter.api.BeforeEach;

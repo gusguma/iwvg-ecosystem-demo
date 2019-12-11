@@ -1,6 +1,5 @@
-package es.upm.miw.iwvg.ecosystem;
+package com.urneba.iwvg.ecosystem;
 
-import es.upm.miw.iwvg.ecosystem.practicas.DecimalCollection;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg.ecosystem.practicas;
+package com.urneba.iwvg.ecosystem.practicas;
 
 /**
  * Conceptos: Las fracciones propias son aquellas cuyo numerador es menor que el denominador

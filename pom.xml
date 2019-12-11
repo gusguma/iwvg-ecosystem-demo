@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>iwvg-ecosystem-demo</artifactId>
-    <groupId>es.upm.miw</groupId>
+    <groupId>com.urneba</groupId>
     <version>1.3.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 

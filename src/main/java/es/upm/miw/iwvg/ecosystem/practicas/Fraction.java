@@ -1,4 +1,5 @@
 package es.upm.miw.iwvg.ecosystem.practicas;
+
 /**
  * Conceptos: Las fracciones propias son aquellas cuyo numerador es menor que el denominador
  * <p>
@@ -28,7 +29,6 @@ package es.upm.miw.iwvg.ecosystem.practicas;
 public class Fraction {
 
     private int numerator;
-
     private int denominator;
 
     public Fraction(int numerator, int denominator) {
@@ -51,4 +51,91 @@ public class Fraction {
     public int getDenominator() {
         return denominator;
     }
+
+    public void setNumerator(int numerator) {
+        this.numerator = numerator;
+    }
+
+    public void setDenominator(int denominator) {
+        this.denominator = denominator;
+    }
+
+    public boolean isPropia() {
+        return numerator < denominator;
+    }
+
+    public boolean isImpropia() {
+        return !isPropia();
+    }
+
+    private int multiplyExtreme(Fraction fraction){
+        return this.numerator * fraction.denominator;
+    }
+
+    private int multiplyMedium(Fraction fraction){
+        return this.denominator * fraction.numerator;
+    }
+
+    public boolean isEquivalent(Fraction fraction) {
+        return multiplyExtreme(fraction) == multiplyMedium(fraction);
+    }
+
+    public boolean isMajor(Fraction fraction) {
+        return multiplyExtreme(fraction) > multiplyMedium(fraction);
+    }
+
+    public boolean isMinor(Fraction fraction) {
+        return multiplyExtreme(fraction) < multiplyMedium(fraction);
+    }
+
+    public Fraction sum(Fraction fraction) {
+        this.numerator = multiplyExtreme(fraction) + multiplyMedium(fraction);
+        this.denominator = denominatorCommon(fraction);
+        return this;
+    }
+
+    public Fraction sub(Fraction fraction) {
+        this.numerator = multiplyExtreme(fraction) - multiplyMedium(fraction);
+        this.denominator = denominatorCommon(fraction);
+        return this;
+    }
+
+    public Fraction multiply(Fraction fraction) {
+        this.numerator = this.numerator * fraction.numerator;
+        this.denominator = this.denominator * fraction.denominator;
+        return this;
+    }
+
+    public Fraction divide(Fraction fraction) {
+        this.numerator = multiplyExtreme(fraction);
+        this.denominator = multiplyMedium(fraction);
+        return this;
+    }
+
+    public Fraction simplify(){
+        int maximumCommonDivider = maximumCommonDivider();
+        numerator = numerator / maximumCommonDivider;
+        denominator = denominator / maximumCommonDivider;
+        return this;
+    }
+
+    private int denominatorCommon(Fraction fraction){
+        this.denominator = this.denominator * fraction.denominator;
+        return this.denominator;
+    }
+
+    private int maximumCommonDivider(){
+        Fraction fraction = new Fraction();
+        int rest;
+        fraction.numerator = Math.abs(numerator);
+        fraction.denominator = Math.abs(denominator);
+        while(fraction.denominator != 0){
+           rest = fraction.numerator % fraction.denominator;
+           fraction.numerator = fraction.denominator;
+           fraction.denominator = rest;
+        }
+        return fraction.numerator;
+    }
+
+
 }

@@ -22,15 +22,6 @@ public class DecimalCollection {
 
     public double sum() {
         this.validateIsNullOrEmpty();
-        /*
-        Version java 1.7
-        double sum = 0;
-        for (double item : this.collection) {
-            sum += item;
-        }
-        return sum;
-        */
-        // return this.collection.stream().mapToDouble(value -> value).sum();
         return this.collection.stream().mapToDouble(Double::doubleValue).sum();
     }
 
@@ -43,5 +34,20 @@ public class DecimalCollection {
     public double higher() {
         this.validateIsNullOrEmpty();
         return Collections.max(this.collection);
+    }
+
+    public double lower() {
+        this.validateIsNullOrEmpty();
+        return Collections.min(this.collection);
+    }
+
+    public double average() {
+        this.validateIsNullOrEmpty();
+        return this.collection.stream().mapToDouble(Double::doubleValue).average().getAsDouble();
+    }
+
+    public double multiply() {
+        this.validateIsNullOrEmpty();
+        return this.collection.stream().reduce(1.0, (accumulator, value) -> (accumulator * value));
     }
 }
